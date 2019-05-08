@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/.css">
+    <title>Словарь английского языка</title>
+</head>
+<body>
+    <em>index.html</em>
+    <div>
+        <table class="table">
+           <tr><th>Английское слов</th><th>Перевод</th><th>Транскрипция</th></tr>
+            <?php foreach($data as $elem): ?>
+           <tr><td><?=$elem['eng']; ?></td><td><?=$elem['rus']; ?></td><td><?=$elem['trans']; ?></td></tr>
+            <?php endforeach; ?>
+        </table>
+    </div>
+</body>
+</html>
