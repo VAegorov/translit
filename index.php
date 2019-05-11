@@ -13,4 +13,4 @@ $query = "SELECT * FROM slovo";
 $result = mysqli_query($link, $query);
 for ($data = []; $data[] = mysqli_fetch_assoc($result););
 
-include_once ("index.html");
+include_once("views/index.html");
