@@ -11,6 +11,6 @@ include_once ('bd.php');
 
 $query = "SELECT * FROM slovo";
 $result = mysqli_query($link, $query);
-for ($data = []; $data[] = mysqli_fetch_assoc($result););
+for ($data = []; $row = mysqli_fetch_assoc($result); $data[] = $row);
 
 include_once("views/index.html");
