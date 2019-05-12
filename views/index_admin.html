@@ -16,7 +16,7 @@
                <td><?=$elem['eng']; ?></td>
                <td><?=$elem['rus']; ?></td>
                <td><?=$elem['trans']; ?></td>
-               <td><form action="edit.php" method="POST"><button>Редактировать</button></form></td>
+               <td><form action="edit.php" method="POST"><button name="id" value="<?=$elem['id']; ?>">Редактировать</button></form></td>
                <td><form action="delete.php" method="POST"><button>Удалить</button></form></td>
            </tr>
             <?php endforeach; ?>
