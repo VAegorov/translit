@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/.css">
+    <title>Словарь английского языка</title>
+</head>
+<body>
+    <div>
+        <table class="table">
+            <tr>
+                <th>Английское слов</th>
+                <th>Перевод</th>
+                <th>Транскрипция</th>
+            </tr>
+            <tr>
+                <form action="admin.php" method="POST">
+                <td><input name = "eng" value="<?=$data['eng']; ?>"></input></td>
+                <td><input name = "rus" value="<?=$data['rus']; ?>"></input></td>
+                <td><input name = "trans" value="<?=$data['trans']; ?>"></input></td>
+                <td><button name="id" value="<?=$data['id']; ?>">Сохранить</button></td>
+                </form>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
