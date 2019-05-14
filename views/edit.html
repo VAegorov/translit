@@ -14,12 +14,20 @@
                 <th>Транскрипция</th>
             </tr>
             <tr>
+
+                <td><input name = "eng" value="<?=$data['eng']; ?>"></td>
+                <td><input name = "rus" value="<?=$data['rus']; ?>"></td>
+                <td><input name = "trans" value="<?=$data['trans']; ?>"></td>
                 <form action="admin.php" method="POST">
-                <td><input name = "eng" value="<?=$data['eng']; ?>"></input></td>
-                <td><input name = "rus" value="<?=$data['rus']; ?>"></input></td>
-                <td><input name = "trans" value="<?=$data['trans']; ?>"></input></td>
+                <input name="edit" hidden>
                 <td><button name="id" value="<?=$data['id']; ?>">Сохранить</button></td>
                 </form>
+                <form action="admin.php" method="POST">
+                    <input name="delete" hidden>
+                <td><button name="id" value="<?=$data['id']; ?>">Удалить</button></td>
+                </form>
+
+
             </tr>
         </table>
     </div>

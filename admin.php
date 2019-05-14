@@ -12,7 +12,8 @@ if (isset($_SESSION['auth']) && $_SESSION['auth'] == true) {
     $hid = "hidden";
     echo "<p><a href='logout.php'>Выход</a></p>";
     include_once('bd.php');
-    if (isset($_POST['id']) && !empty($_POST['eng']) && !empty($_POST['eng'])) {
+
+    if (isset($_POST['edit']) && !empty($_POST['eng']) && !empty($_POST['eng'])) {
         $id = (int) $_POST['id'];
         $eng = mysqli_real_escape_string($link, trim($_POST['eng']));
         $rus = mysqli_real_escape_string($link, trim($_POST['rus']));
@@ -24,6 +25,16 @@ if (isset($_SESSION['auth']) && $_SESSION['auth'] == true) {
             echo "Слово обновлено";
         }
     }
+
+    if (isset($_POST['delete'])) {
+        $id = (int) $_POST['id'];
+        $query = sprintf("DELETE FROM slovo WHERE id=%d", $id);
+        mysqli_query($link, $query) or die ("Ошибка базы данных");
+        if (mysqli_affected_rows($link) == 1) {
+            echo "Слово удалено";
+        }
+    }
+
     $query = "SELECT * FROM slovo";
     $result = mysqli_query($link, $query) or die ("Ошибка базы данных");
     for ($data = []; $row = mysqli_fetch_assoc($result); $data[] = $row);
