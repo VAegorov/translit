@@ -11,7 +11,11 @@
         <table class="table">
            <tr><th>Английское слов</th><th>Перевод</th><th>Транскрипция</th></tr>
             <?php foreach($data as $elem): ?>
-           <tr><td><?=$elem['eng']; ?></td><td><?=$elem['rus']; ?></td><td><?=$elem['trans']; ?></td></tr>
+           <tr>
+               <td><?=htmlspecialchars($elem['eng']); ?></td>
+               <td><?=htmlspecialchars($elem['rus']); ?></td>
+               <td><?=htmlspecialchars($elem['trans']); ?></td>
+           </tr>
             <?php endforeach; ?>
         </table>
     </div>

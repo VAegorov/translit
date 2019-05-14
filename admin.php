@@ -7,6 +7,9 @@
  * Time: 13:31
  */
 session_start();
+
+var_dump($_POST);
+
 $hid = "";
 if (isset($_SESSION['auth']) && $_SESSION['auth'] == true) {
     $hid = "hidden";
@@ -24,6 +27,7 @@ if (isset($_SESSION['auth']) && $_SESSION['auth'] == true) {
         if (mysqli_affected_rows($link) == 1) {
             echo "Слово обновлено";
         }
+
     }
 
     if (isset($_POST['delete'])) {
@@ -32,6 +36,17 @@ if (isset($_SESSION['auth']) && $_SESSION['auth'] == true) {
         mysqli_query($link, $query) or die ("Ошибка базы данных");
         if (mysqli_affected_rows($link) == 1) {
             echo "Слово удалено";
+        }
+    }
+
+    if (isset($_POST['add']) && (isset($_POST['eng']) || isset($_POST['rus']))) {
+        $eng = mysqli_real_escape_string($link, $_POST['eng']);
+        $rus = mysqli_real_escape_string($link, $_POST['rus']);
+        $trans = mysqli_real_escape_string($link, $_POST['trans']);
+        $query =sprintf("INSERT INTO slovo (eng, rus, trans) VALUES ('%s','%s','%s')", $eng, $rus, $trans);
+        mysqli_query($link, $query) or die ("Ошибка базы данных");
+        if (mysqli_affected_rows($link) == 1) {
+            echo "Слово добавлено";
         }
     }
 

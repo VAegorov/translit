@@ -11,12 +11,22 @@
            <tr>
                <th>Английское слов</th><th>Перевод</th><th>Транскрипция</th>
            </tr>
+           <tr>
+               <form action="admin.php" method="POST" name="form_add">
+                   <td><input type="text" name="eng" value=""></td>
+                   <td><input type="text" name="rus" value=""></td>
+                   <td><input type="text" name="trans" value=""></td>
+                   <td><button name="add">Добавить слово</button></td>
+               </form>
+           </tr>
             <?php foreach($data as $elem): ?>
            <tr>
-               <td><?=$elem['eng']; ?></td>
-               <td><?=$elem['rus']; ?></td>
-               <td><?=$elem['trans']; ?></td>
-               <td><form action="edit.php" method="POST"><button name="id" value="<?=$elem['id']; ?>">Редактировать</button></form></td>
+               <form action="edit.php" method="POST">
+                   <td><?=htmlspecialchars($elem['eng']); ?></td>
+                   <td><?=htmlspecialchars($elem['rus']); ?></td>
+                   <td><?=htmlspecialchars($elem['trans']); ?></td>
+                   <td><button name="id" value="<?=$elem['id']; ?>">Редактировать</button></td>
+               </form>
            </tr>
             <?php endforeach; ?>
         </table>
