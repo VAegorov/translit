@@ -1,0 +1,25 @@
+body {
+    background-image: url("image/back_g.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+table {
+    background-color: chartreuse;/*цвет подложки таблицы*/
+    margin: auto;/*выравнивание посередине относительно окна браузера*/
+    border-collapse: collapse;/*границы между ячейками сливаются*/
+}
+td {
+    border-bottom: 1px solid #ccc;/*подчеркивание ячеек снизу*/
+    color: #669;/*цвет шрифта в ячейке*/
+    padding: 5px 8px;/*отступы к ячейке от текста*/
+    /*transition: 10.3s linear;*/
+}
+button {
+
+}
+button:hover {
+    color: #666699;
+}

@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../css/.css">
+    <link rel="stylesheet" type="text/css" href="css/.css">
     <title>Словарь английского языка</title>
 </head>
 <body>
     <p><a href="admin.php">Вход</a></p>
     <div>
         <table class="table">
-           <tr><th>Английское слов</th><th>Перевод</th><th>Транскрипция</th></tr>
+           <tr><th>Английское слово</th><th>Перевод</th><th>Транскрипция</th></tr>
             <?php foreach($data as $elem): ?>
            <tr>
                <td><?=htmlspecialchars($elem['eng']); ?></td>
